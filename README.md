@@ -8,7 +8,7 @@
 This project is to create a responsive Todo list app which allows you to add and remove a task. The design was gotten from minimalist.
 ## Live Demo
 
-[Live Demo Link](https://raw.githack.com/Kossi-stack/Mobile_Version_Skeleton/github-deployment/index.html)
+[Live Demo Link](https://kossi-stack.github.io/To-Do-list-App/)
 
 ## Built With
 
