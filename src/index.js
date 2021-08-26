@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0 no-undef: 0 */
 import _ from 'lodash';
 import './style.css';
 
@@ -20,7 +21,6 @@ const todoList = [
 ];
 
 const listContainer = document.getElementById('todo-lists');
-
 
 const showTasks = () => {
   for (let i = 0; i < todoList.length; i += 1) {
