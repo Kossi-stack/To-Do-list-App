@@ -13,7 +13,7 @@ const todoList = [
     index: 2,
   },
   {
-    description: 'join Stanp up team at 4pm',
+    description: 'Join Stanp up team at 4pm',
     completed: false,
     index: 3,
   },
