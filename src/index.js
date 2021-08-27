@@ -15,11 +15,6 @@ const todoList = [
     index: 2,
   },
   {
-    description: 'Eat something',
-    completed: false,
-    index: 2,
-  },
-  {
     description: 'Join Stanp up team at 4pm',
     completed: false,
     index: 3,
@@ -46,6 +41,13 @@ const showTasks = () => {
 
     listContainer.innerHTML += list;
   }
+  const box = document.querySelectorAll('.box');
+  for (let j = 0; j < box.length; j += 1) {
+    box[j].addEventListener('change', (event) => {
+      completeTask(event.target, tasks[j]);
+      SetLocalStorage(tasks);
+    });
+  }
 };
 const label = document.querySelectorAll('label');
 label.forEach((item) => {
@@ -69,15 +71,6 @@ label.forEach((item) => {
     const ellipsis = item.parentElement.parentElement.lastElementChild.previousElementSibling;
     ellipsis.style.display = 'block';
   });
-
-  const box = document.querySelectorAll('.box');
-  for (let j = 0; j < box.length; j += 1) {
-    box[j].checked = tasks[j].completed;
-    box[j].addEventListener('change', (event) => {
-      completeTask(event.target, tasks[j]);
-      SetLocalStorage(tasks);
-    });
-  }
 });
 
 window.onload = () => {
