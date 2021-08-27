@@ -26,7 +26,11 @@ const SetLocalStorage = (lists) => {
   localStorage.setItem('myTasks', JSON.stringify(lists));
 };
 
-const getTasksFromLocalStorage = () => JSON.parse(localStorage.getItem('myTasks'));
+const getTasksFromLocalStorage = () => {
+  const tasks = JSON.parse(localStorage.getItem('myTasks'));
+  return tasks;
+};
+
 const showTasks = () => {
   const tasks = getTasksFromLocalStorage();
   for (let i = 0; i < tasks.length; i += 1) {
@@ -38,13 +42,18 @@ const showTasks = () => {
     <button class="ellipsis"><i class="fas fa-ellipsis-v fa-xs"></i></button>
     <button class="delete"><i class='fas fa-trash-alt'></i></button>
   </li>`;
-
     listContainer.innerHTML += list;
   }
   const box = document.querySelectorAll('.box');
+
   for (let j = 0; j < box.length; j += 1) {
+    if (tasks[j].completed === true) {
+      box[j].checked = true;
+    } else {
+      box[j].checked = false;
+    }
     box[j].addEventListener('change', (event) => {
-      completeTask(event.target, tasks[j]);
+      completeTask(event, tasks[j]);
       SetLocalStorage(tasks);
     });
   }
@@ -60,7 +69,8 @@ label.forEach((item) => {
     last.style.display = 'block';
     item.parentElement.parentElement.style.backgroundColor = '#dadadc';
 
-    const ellipsis = item.parentElement.parentElement.lastElementChild.previousElementSibling;
+    const ellipsis =
+      item.parentElement.parentElement.lastElementChild.previousElementSibling;
     ellipsis.style.display = 'none';
   });
 
@@ -68,7 +78,8 @@ label.forEach((item) => {
     const last = item.parentElement.parentElement.lastElementChild;
     last.style.display = 'none';
     item.parentElement.parentElement.style.backgroundColor = '#fff';
-    const ellipsis = item.parentElement.parentElement.lastElementChild.previousElementSibling;
+    const ellipsis =
+      item.parentElement.parentElement.lastElementChild.previousElementSibling;
     ellipsis.style.display = 'block';
   });
 });
