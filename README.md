@@ -28,7 +28,14 @@ This project is to create a responsive Todo list app which allows you to add and
 To get a local copy up and running follow these simple example steps.
 
 - You can clone this repo by typing git clone `https://github.com/Kossi-stack/To-Do-list-App.git` on your terminal
+
 - Type cd `To-Do-list-App` to access the project on the terminal
+
+- Run `npm install` from your editor's terminal.
+
+- Run `npm run build` from your editor's terminal.
+
+- Run `npm start` from your editor's terminal to view the project in your browser.
 
 ## Author
 
