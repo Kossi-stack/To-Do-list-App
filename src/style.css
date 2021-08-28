@@ -5,19 +5,48 @@
 }
 
 body {
-  background-color: #f2f3f6;
+  background-color: #d5d7df;
   width: 100%;
   height: 100%;
   font-family: Georgia, Times, 'Times New Roman', serif;
-  font-size: 20px;
+  font-size: 16px;
+}
+
+.clear-completed,
+#to-do,
+.todo-title,
+#form,
+.task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #to-do {
   height: 100vh;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+
+button i {
+  color: #c3c4c7;
+  transition: 250ms ease-in-out;
+}
+
+.clear-completed {
+  margin: 0 auto;
+  text-decoration: none;
+  color: #000;
+  opacity: 0.8;
+  height: 30px;
+  background-color: #787f96;
+  transition: 300ms;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button i:hover,
+.clear-completed:hover {
+  color: rgb(35, 33, 185);
 }
 
 .to-do-child {
@@ -33,16 +62,14 @@ body {
 .todo-title,
 #form,
 .task {
-  display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #dadadc;
-  height: auto;
+  min-height: 30px;
+  max-height: 70px;
   width: 95%;
   margin: 0 auto;
-  align-items: center;
   gap: 15px;
-  margin-top: 10px;
-  padding-bottom: 10px;
+  padding: 0 5px;
 }
 
 button,
@@ -51,7 +78,11 @@ label {
   appearance: none;
   outline: none;
   border: none;
-  background-color: #fff;
+  background-color: inherit;
+}
+
+label {
+  padding-right: 80px;
 }
 
 label:hover {
@@ -60,26 +91,12 @@ label:hover {
 
 .todo-title h2,
 #todo-lists li label {
-  color: #4a4d55;
+  color: #545862;
   font-size: 15px;
-  font-weight: 500;
-}
-
-button i {
-  color: #c3c4c7;
-  transition: 250ms ease-in-out;
-}
-
-.delete i {
-  color: brown;
+  font-weight: 400;
 }
 
 button i:hover {
-  color: #545862;
-  cursor: pointer;
-}
-
-.delete i:hover {
   cursor: pointer;
 }
 
@@ -105,42 +122,25 @@ button i:hover {
 
 #todo-lists li input[type="checkbox"] {
   margin-right: 5px;
+  outline: 0;
 }
 
-#todo-lists li button i:hover {
+#todo-lists .ellipsis i:hover {
   cursor: move;
 }
 
-.clear-completed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  text-decoration: none;
-  color: #000;
-  opacity: 0.8;
-  font-size: 15px;
-  height: 30px;
-  background-color: #c3c4c7;
-  transition: 300ms;
-}
-
 .clear-completed:hover {
-  text-decoration: underline;
+  text-decoration: none;
   opacity: 1;
-}
-
-.delete {
-  display: none;
-}
-
-.line {
-  text-decoration: line-through;
 }
 
 .box:checked + .form-label {
   text-decoration: line-through;
   opacity: 0.6;
+}
+
+.opaque {
+  opacity: 0.8;
 }
 
 @media all and (min-width: 768px) {
