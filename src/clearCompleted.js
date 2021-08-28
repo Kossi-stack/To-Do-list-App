@@ -12,4 +12,4 @@ const removeCompletedTasks = () => {
   showTasks();
 };
 
-export default removeCompletedTasks
+export default removeCompletedTasks;

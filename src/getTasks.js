@@ -7,5 +7,5 @@ const getTasksFromLocalStorage = () => {
   }
   return myTasks;
 };
-  
+
 export default getTasksFromLocalStorage;

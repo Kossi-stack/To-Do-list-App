@@ -1,7 +1,7 @@
 import getTasksFromLocalStorage from './getTasks.js';
 import completeTask from './complete.js';
 import { setLocalStorage } from './setLocalStorage.js';
-
+// Dynamically display tasks
 const listContainer = document.getElementById('todo-lists');
 const showTasks = () => {
   listContainer.innerHTML = '';
