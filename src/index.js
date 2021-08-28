@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import './style.css';
 import showTasks from './showTasks.js';
 import { addToLocalStorage } from './setLocalStorage.js';
@@ -13,8 +12,6 @@ const removeCompleted = document.querySelector('.clear-completed');
 function clearInput() {
   input.value = '';
 }
-
-// Add Task
 
 const addTodoTask = (e) => {
   const tasks = getTasksFromLocalStorage();
@@ -41,10 +38,8 @@ const setIndex = (tasks) => {
   });
 };
 
-// Event Listener To Add Form
 form.addEventListener('submit', addTodoTask);
 
-// Event Listener To Delete One Task
 const listContainer = document.getElementById('todo-lists');
 listContainer.addEventListener('click', (event) => {
   if (event.target.classList.contains('delete-task')) {
@@ -53,7 +48,6 @@ listContainer.addEventListener('click', (event) => {
   }
 });
 
-// Event Listener To Clear Completed
 removeCompleted.addEventListener('click', removeCompletedTasks);
 
 showTasks();

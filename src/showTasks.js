@@ -1,7 +1,7 @@
 import getTasksFromLocalStorage from './getTasks.js';
 import completeTask from './complete.js';
 import { setLocalStorage } from './setLocalStorage.js';
-// Dynamically display tasks
+
 const listContainer = document.getElementById('todo-lists');
 const showTasks = () => {
   listContainer.innerHTML = '';
@@ -34,12 +34,10 @@ const showTasks = () => {
       label.setAttribute('contenteditable', 'true');
     });
 
-    // Show Delete Icon On Focus
     label.addEventListener('focus', () => {
       label.parentElement.parentElement.style.backgroundColor = '#dadadc';
     });
 
-    // Hide Delete Icon On Blur
     label.addEventListener('blur', () => {
       label.parentElement.parentElement.style.backgroundColor = '#fff';
       tasks[i].description = label.innerHTML;
